@@ -6,7 +6,8 @@ Votre logiciel doit retourner les caractéristiques d'un panier de produits.
 
 Vous êtes commerçant, tous les 3 articles identiques, le troisième est offert.
 
-```js
+[source,js]
+----
 
 let prices = { banana: 1, potato: 2, tomato: 3, cucumber: 4, salad: 5, apple: 6 };
 
@@ -17,4 +18,4 @@ myWonderfulFunction(prices, products);
 // should return
 { price: 25, countArticles: 10, countProducts: 4 }
 
-```
+----

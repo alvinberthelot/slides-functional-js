@@ -6,7 +6,8 @@
 
 Un algorithme récursif est un algorithme qui résout un problème en calculant des solutions d'instances plus petites du même problème (cf. https://fr.wikipedia.org/wiki/Algorithme_r%C3%A9cursif[définition Wikipedia]).
 
-```js
+[source,js]
+----
 
 function factorial(num)
 {
@@ -26,4 +27,4 @@ function factorial(num)
 
 console.log(factorial(8)); // 40320
 
-```
+----

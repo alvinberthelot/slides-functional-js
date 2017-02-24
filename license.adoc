@@ -1,6 +1,6 @@
 === Licence CC BY-SA 3.0
 
-image::content/img/license-by-sa.png[align=left]
+image::content/img/license-by-sa.png[align=left, link="https://creativecommons.org/licenses/by-sa/3.0/deed.fr"]
 
 *Ce(tte) œuvre est mise à disposition selon les termes de la Licence Creative Commons. Attribution - Partage dans les Mêmes Conditions 3.0 non transposé.*
 

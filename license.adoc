@@ -1,16 +1,16 @@
-=== Licence CC BY-SA 3.0
+== Licence
 
-image::content/img/license-by-sa.png[align=left, link="https://creativecommons.org/licenses/by-sa/3.0/deed.fr"]
+image::content/img/license-by-sa.png[width=100%, scaledwidth=25%, align=center, link="https://creativecommons.org/licenses/by-sa/3.0/deed.fr"]
+
+CC BY-SA 3.0
 
 *Ce(tte) œuvre est mise à disposition selon les termes de la Licence Creative Commons. Attribution - Partage dans les Mêmes Conditions 3.0 non transposé.*
 
 Copyright (C) 2017 http://alvin.berthelot.rocks/[Alvin Berthelot]
 
-Pour toutes questions ou réclamations :
+Pour toutes questions, réclamations ou remarques, Twitter : https://twitter.com/alvinberthelot[@alvinberthelot]
 
-GitHub : https://github.com/alvinberthelot[alvinberthelot]
-
-Twitter : https://twitter.com/alvinberthelot[@alvinberthelot]
+<<<
 
 === Explications licence CC BY-SA 3.0
 

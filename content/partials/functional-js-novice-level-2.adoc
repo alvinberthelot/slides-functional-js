@@ -1,0 +1,204 @@
+== Programmation fonctionnelle avec les tableaux
+
+<<<
+
+=== Les tableaux
+
+En JavaScript, les collections sont représentées par des tableaux.
+
+*_Rappel_* +
+Les tableaux sont des objets particuliers héritant de +Array.prototype+ et donc disposant de propriétés et méthodes spécifiques.
+
+Les tableaux possèdent 3 principales familles de méthodes :
+
+- Les méthodes mutateurs
+
+- Les méthodes accesseurs
+
+- Les méthodes itératives
+
+<<<
+
+=== Méthodes mutateurs
+
+Les tableaux disposent d'un jeu de méthodes pour manipuler son contenu, voici les plus intéressantes :
+
+- +push()+ : ajoute un élément au tableau (et renvoie sa nouvelle longueur).
+- +shift()+ : supprime et renvoie le premier élément d’un tableau.
+- +sort()+ : trie le contenu d’un tableau.
+
+```js
+
+var animals = ['Grumpy', 'Droopy', 'Nemo'];
+var cat = animals.shift();
+console.log(animals); // ['Droopy', 'Nemo']
+
+```
+
+WARNING: Ces méthodes modifient l'état du tableau.
+
+<<<
+
+=== Méthodes accesseurs
+
+Les tableaux disposent d'un jeu de méthodes pour retourner une représentation de son contenu, voici les plus intéressantes :
+
+- +indexOf()+ : retourne le premier index d'un élément.
+- +includes()+ : détermine si élément est présent.
+- +concat()+ : concaténe des tableaux.
+- +join()+ : créée une chaîne de caractères à partir d’un tableau.
+- +slice()+ : créée une copie d’une portion d’un tableau.
+
+```js
+var animals = ['Grumpy', 'Droopy', 'Nemo'];
+var index = animals.indexOf('Nemo');
+console.log(index); // 2
+```
+
+<<<
+
+=== Méthodes itératives
+
+Les tableaux disposent d'un jeu de méthodes pour itérer sur ses éléments et les transformer, voici les plus intéressantes :
+
+- +map()+ : applique une transformation sur chaque élément.
+- +reduce()+ : applique une fonction sur un accumulateur et sur chaque élément.
+- +filter()+ : filtre les éléments d'un tableau selon un prédicat.
+- +forEach()+ : appelle une fonction sur chaque élément.
+
+```js
+
+var animals = ['Grumpy', 'Droopy', 'Poppy'];
+animals.forEach(function(animal) {
+  console.log(animal);
+});
+
+```
+
+<<<
+
+=== Manipulation avec les méthodes mutateur
+
+Il faut faire très attention lorsque l'on manipule les tableaux avec les méthodes mutateur car celles-ci génèrent des effets de bord (sur les tableaux) et c'est ce que l'on souhaite éviter au maximum en programmation fonctionnelle.
+
+C'est pourquoi on utilise d'autres méthodes pour cloner le tableau original pour ensuite pouvoir *manipuler cette nouvelle référence*.
+
+```js
+
+var animals = ['Grumpy', 'Droopy', 'Nemo'];
+
+var pets = animals.slice(0);
+
+var cat = pets.shift();
+
+console.log(animals); // ['Grumpy', 'Droopy', 'Nemo']
+console.log(pets); // ['Droopy', 'Nemo']
+
+```
+
+<<<
+
+=== Manipulation avec les méthodes itératives
+
+À l'inverse lorsque l'on manipule les tableaux avec les méthodes itératives, celles-ci ne génèrent pas d'effets de bord (sur les tableaux).
+
+C'est pourquoi on affecte systématiquement le résultat à une nouvelle variable pour pouvoir *manipuler cette nouvelle référence*.
+
+```js
+
+var animals = ['Grumpy', 'Droopy', 'Nemo'];
+
+var pets = animals.map(animal => 'Hello ' + animal);
+
+console.log(animals); // ['Grumpy', 'Droopy', 'Nemo']
+console.log(pets); // ['Hello Grumpy', 'Hello Droopy', 'Hello Nemo']
+
+```
+
+TIP: Une fonction pure doit toujours être invoquée avec des paramètres (input) et son retour (output) doit être affecté, sinon il y a comme un problème.
+
+<<<
+
+=== Les fonctions d'ordre supérieur
+
+Les fonctions sont des valeurs, il est ainsi possible de les manipuler comme n'importe quel autre valeur, donc de les passer en paramètre ou en retour d'une autre fonction.
+
+On appelle ainsi *une fonction d'ordre supérieur, une fonction qui prend une autre fonction comme argument et/ou qui retourne une fonction comme résultat*.
+
+```js
+
+function sum(a, b, c) { 
+  return a + b + c; 
+}
+sum(1, 2, 3); // retourne 6 mais n'affiche rien
+
+function logEverything(toEvaluate, a, b, c) { 
+  var result = toEvaluate(a, b, c);
+  console.log(result);
+  return result; 
+}
+
+logEverything(sum, 1, 2, 3); // retourne 6 et l'affiche
+
+```
+
+<<<
+
+=== Combinaison de fonctions
+
+En y regardant de plus près, les méthodes itératives de l'objet +Array+ *prennent des fonctions en paramètre*, il s'agit donc de fonctions d'ordre supérieure.
+
+Ce qui nous permet de commencer un premier niveau de combinaison.
+
+```js
+
+var users = [
+  {firstname: 'John', age: 33, money: 1200},
+  {firstname: 'Jane', age: 31, money: 800},
+  {firstname: 'Paul', age: 16, money: 400}
+];
+
+var adults = users.filter(user => user.age >= 18);
+var poors = users.filter(user => user.money < 1000);
+
+```
+
+Ici on vient de s'appuyer sur la méthode +filter()+ en la combinant avec d'autres fonctions qui sont indépendantes entre elles.
+
+<<<
+
+=== Combinaison de fonctions chaînées
+
+En y regardant de plus près, on s'aperçoit que les méthodes itératives s'appliquent sur des tableaux et elles vont retourner des tableaux sur lesquels on peut également appliquer des méthodes itératives.
+
+Ce qui nous permet de *combiner les fonctions en les chaînant*.
+
+```js
+
+var users = [
+  {firstname: 'John', age: 33, money: 1200},
+  {firstname: 'Jane', age: 31, money: 800},
+  {firstname: 'Paul', age: 16, money: 400}
+];
+
+var adultsReceiveSalary = users
+  .filter(user => user.age >= 18)
+  .map(user => { user.money += 1000; return user; });
+
+```
+
+WARNING: L'ordre d'appel des fonctions a son importance sur le résultat.
+
+=== La puissance des combinaisons
+
+On vient de voir qu'il était très facile de combiner des fonctions "simples" pour obtenir différents comportements complexes, cela permet de rendre son code plus modulaire. Pour autant, il faut déjà avoir accès à un certain nombre de fonctions "simples".
+
+En JavaScript plusieurs librairies proposent déjà un certain nombre de fonctions génériques :
+
+- http://underscorejs.org/[Underscore], une librairie proposant un certain nombre de fonctions utiles dans l'approche de la programmation fonctionnelle.
+
+- https://lodash.com/[Lodash], un fork d'Undercore qui a su dépasser son maître en terme de performance.
+
+- http://ramdajs.com/[Ramda], librairie conçue spécialement pour la programmation fonctionnelle en facilitant le chaînage des fonctions et l'immuabilité des données.
+
+<<<

@@ -1,0 +1,8 @@
+image::content/img/programming_meme.png[width=100%, scaledwidth=25%, align=center]
+
+=== Exercices
+
+On va s'appuyer sur la plateforme https://nodeschool.io/[NodeSchool.io], pour cela vous devez https://github.com/timoxley/functional-javascript-workshop[installer le TP "Functional Javascript"].
+
+=> Basic: Recursion +
+=> Recursion +

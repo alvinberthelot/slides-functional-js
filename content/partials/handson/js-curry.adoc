@@ -1,0 +1,10 @@
+image::content/img/programming_meme.png[width=100%, scaledwidth=25%, align=center]
+
+=== Exercices
+
+On va s'appuyer sur la plateforme https://nodeschool.io/[NodeSchool.io], pour cela vous devez https://github.com/kishorsharma/currying-workshopper[installer le TP "Currying in JavaScript"].
+
+=> IDENTITY +
+=> BINARY +
+=> DELAY INVOCATION +
+=> CURRY FUNCTION +

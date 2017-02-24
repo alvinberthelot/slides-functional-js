@@ -26,7 +26,8 @@ Il existe deux syntaxes pour manipuler des données.
 
 On convertit les données à manipuler via un "wrapper" Lodash.
 
-```js
+[source,js]
+----
 
 var wrappedNames = _(['John', 'Jane', 'Paul']);
 var messageNames = wrappedNames.map(user => `Hello ${user}`));
@@ -34,7 +35,7 @@ var messageNames = wrappedNames.map(user => `Hello ${user}`));
 var wrappedUsers = _({adult: 'John', young: 'Paul'});
 var messageUsers = wrappedUser.map(user => `Hello ${user}`));
 
-```
+----
 
 <<<
 
@@ -42,15 +43,16 @@ var messageUsers = wrappedUser.map(user => `Hello ${user}`));
 
 Il est également possible de passer les données à manipuler en paramètres.
 
-```js
+[source,js]
+----
 
 _.map(['John', 'Jane', 'Paul'], user => `Hello ${user}`);
 
 _.map({adult: 'John', young: 'Paul'}, user => `Hello ${user}`);
 
-```
+----
 
-INFO: C'est plutôt cette syntaxe qui est utilisée, c'est d'ailleurs celle de la https://lodash.com/docs/4.17.4[documentation officielle].
+NOTE: C'est plutôt cette syntaxe qui est utilisée, c'est d'ailleurs celle de la https://lodash.com/docs/4.17.4[documentation officielle].
 
 <<<
 
@@ -60,7 +62,8 @@ Cependant avec la syntaxe de manipulation en passant les données en paramètre,
 
 Il est nécessaire de passer par un objet "wrapper" en le constituant avec la fonction +chain+ et en le déconstituant avec la fonction +value+.
 
-```js
+[source,js]
+----
 
 var adultsReceiveSalary = _.chain([
   {firstname: 'John', age: 33, money: 1200},
@@ -71,6 +74,6 @@ var adultsReceiveSalary = _.chain([
 .map(user => { user.money += 1000; return user; })
 .value();
 
-```
+----
 
 <<<

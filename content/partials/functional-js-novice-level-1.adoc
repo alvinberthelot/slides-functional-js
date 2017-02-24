@@ -17,13 +17,14 @@ Un objet immuable, en programmation orientée objet et fonctionnelle, est un obj
 
 Parmi les valeurs de JavaScript, les primitifs sont immuables par défaut : les chaînes de caractères, les nombres, les booléens et +undefined+.
 
-```js
+[source,js]
+----
 
 var tutorial = 'Hello';
 
 tutorial += ' World !';
 
-```
+----
 
 Ici la référence +tutorial+ a été changé mais pas la valeur de +'Hello'+.
 
@@ -35,7 +36,8 @@ En mémoire il y a donc 2 valeurs +'Hello'+ et +'Hello World!'+.
 
 À l'inverse les objets peuvent muter.
 
-```js
+[source,js]
+----
 
 var messageHello = {label: 'Hello', name: 'World !'};
 var messageGoodbye = messageHello;
@@ -44,13 +46,14 @@ messageGoodbye.label = 'Goodbye';
 messageHello === messageGoodbye; // Vrai
 messageHello.label; // 'Goodbye'
 
-```
+----
 
 Ici la référence de +messageGoodbye+ n'a pas été changé mais sa valeur oui.
 
 Les tableaux étant des objets c'est aussi vrai pour eux.
 
-```js
+[source,js]
+----
 
 var animals = ['Grumpy', 'Droopy'];
 var pets = animals;
@@ -59,7 +62,7 @@ animals.push('Nemo');
 animals === pets; // Vrai
 pets.length; // 3
 
-```
+----
 
 <<<
 
@@ -67,7 +70,8 @@ pets.length; // 3
 
 On confond souvent immuabilité et constante, *l'immuabilité empêche la modification de la valeur* alors que *la constante empêche la modification de la référence*.
 
-```js
+[source,js]
+----
 
 const tutorial = 'Hello';
 tutorial += ' World !'; // Erreur
@@ -75,13 +79,14 @@ tutorial += ' World !'; // Erreur
 const message = {label: 'Hello', name: 'World !'};
 messageGoodbye.label = 'Goodbye'; // Pas d'erreur
 
-```
+----
 
 <<<
 
 === Quizz Immuabilité Vs Constante
 
-```js
+[source,js]
+----
 
 var user1 = {firstname: 'John', age: 33, money: 1200};
 const user2 = {firstname: 'Jane', age: 31, money: 800};
@@ -110,7 +115,7 @@ sayMessageToUser(message, user3); // ???
 console.log(message); // ???
 console.log(user3.money); // ???
 
-```
+----
 
 <<<
 
@@ -122,7 +127,8 @@ Si un objet est passé en paramètre d'une fonction, on peut se poser là questi
 
 Si un objet qui est passé en paramètre d'une fonction est modifié (au sein de cette fonction), on parlera alors d'une *fonction ayant des "effets de bord"* ou de *fonction impure*.
 
-```js
+[source,js]
+----
 
 function sayMessageToUser(message, user) {
   if(user.age < 18) {
@@ -134,7 +140,7 @@ function sayMessageToUser(message, user) {
   }
 }
 
-```
+----
 
 <<<
 
@@ -142,7 +148,8 @@ function sayMessageToUser(message, user) {
 
 On appelle *une fonction pure, une fonction dont le résultat ne dépend que des arguments qui lui sont passés* et jamais du contexte dans laquelle elle est invoquée *et qui n'a pas d'effets de bord*, c'est à dire qui ne change pas le contexte dans laquelle elle est invoquée.
 
-```js
+[source,js]
+----
 
 var coeff = 1;
 
@@ -161,7 +168,7 @@ function increaseCoeff() { 
   coeff++;
 }
 
-```
+----
 
 <<<
 
@@ -181,7 +188,8 @@ Utiliser un maximum de fonctions pures apportent de nombreux avantages :
 
 Comme le résultat d'une fonction pure ne dépend que des arguments qui lui sont passés, celà implique qu'*une invocation avec des arguments identiques retournera toujours le même résultat*.
 
-```js
+[source,js]
+----
 
 var coeff = 1;
 
@@ -195,7 +203,7 @@ function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-```
+----
 
 Cela permet de *tester facilement toute fonction pure*.
 
@@ -207,7 +215,8 @@ Lorsqu'on indique qu'une fonction pure ne dépend que des arguments qui lui sont
 
 Une expression est référentiellement transparente si elle peut être remplacée par sa valeur sans changer le programme (cf. https://fr.wikipedia.org/wiki/Transparence_r%C3%A9f%C3%A9rentielle[définition Wikipedia]).
 
-```js
+[source,js]
+----
 
 function addTwo(number) {
   return number + 2;
@@ -218,6 +227,6 @@ addTwo(5) === addTwo(addTwo(3)); // Vrai
 
 5 === addTwo; // Faux
 
-```
+----
 
 Cela permet de *combiner des fonctions à l'intérieur d'autres fonctions*.

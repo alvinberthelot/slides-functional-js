@@ -27,13 +27,14 @@ Les tableaux disposent d'un jeu de méthodes pour manipuler son contenu, voici l
 - +shift()+ : supprime et renvoie le premier élément d’un tableau.
 - +sort()+ : trie le contenu d’un tableau.
 
-```js
+[source,js]
+----
 
 var animals = ['Grumpy', 'Droopy', 'Nemo'];
 var cat = animals.shift();
 console.log(animals); // ['Droopy', 'Nemo']
 
-```
+----
 
 WARNING: Ces méthodes modifient l'état du tableau.
 
@@ -49,11 +50,14 @@ Les tableaux disposent d'un jeu de méthodes pour retourner une représentation 
 - +join()+ : créée une chaîne de caractères à partir d’un tableau.
 - +slice()+ : créée une copie d’une portion d’un tableau.
 
-```js
+[source,js]
+----
+
 var animals = ['Grumpy', 'Droopy', 'Nemo'];
 var index = animals.indexOf('Nemo');
 console.log(index); // 2
-```
+
+----
 
 <<<
 
@@ -66,14 +70,15 @@ Les tableaux disposent d'un jeu de méthodes pour itérer sur ses éléments et 
 - +filter()+ : filtre les éléments d'un tableau selon un prédicat.
 - +forEach()+ : appelle une fonction sur chaque élément.
 
-```js
+[source,js]
+----
 
 var animals = ['Grumpy', 'Droopy', 'Poppy'];
 animals.forEach(function(animal) {
   console.log(animal);
 });
 
-```
+----
 
 <<<
 
@@ -83,7 +88,8 @@ Il faut faire très attention lorsque l'on manipule les tableaux avec les métho
 
 C'est pourquoi on utilise d'autres méthodes pour cloner le tableau original pour ensuite pouvoir *manipuler cette nouvelle référence*.
 
-```js
+[source,js]
+----
 
 var animals = ['Grumpy', 'Droopy', 'Nemo'];
 
@@ -94,7 +100,7 @@ var cat = pets.shift();
 console.log(animals); // ['Grumpy', 'Droopy', 'Nemo']
 console.log(pets); // ['Droopy', 'Nemo']
 
-```
+----
 
 <<<
 
@@ -104,7 +110,8 @@ console.log(pets); // ['Droopy', 'Nemo']
 
 C'est pourquoi on affecte systématiquement le résultat à une nouvelle variable pour pouvoir *manipuler cette nouvelle référence*.
 
-```js
+[source,js]
+----
 
 var animals = ['Grumpy', 'Droopy', 'Nemo'];
 
@@ -113,7 +120,7 @@ var pets = animals.map(animal => 'Hello ' + animal);
 console.log(animals); // ['Grumpy', 'Droopy', 'Nemo']
 console.log(pets); // ['Hello Grumpy', 'Hello Droopy', 'Hello Nemo']
 
-```
+----
 
 TIP: Une fonction pure doit toujours être invoquée avec des paramètres (input) et son retour (output) doit être affecté, sinon il y a comme un problème.
 
@@ -125,7 +132,8 @@ Les fonctions sont des valeurs, il est ainsi possible de les manipuler comme n'i
 
 On appelle ainsi *une fonction d'ordre supérieur, une fonction qui prend une autre fonction comme argument et/ou qui retourne une fonction comme résultat*.
 
-```js
+[source,js]
+----
 
 function sum(a, b, c) { 
   return a + b + c; 
@@ -140,7 +148,7 @@ function logEverything(toEvaluate, a, b, c) { 
 
 logEverything(sum, 1, 2, 3); // retourne 6 et l'affiche
 
-```
+----
 
 <<<
 
@@ -150,7 +158,8 @@ En y regardant de plus près, les méthodes itératives de l'objet +Array+ *pren
 
 Ce qui nous permet de commencer un premier niveau de combinaison.
 
-```js
+[source,js]
+----
 
 var users = [
   {firstname: 'John', age: 33, money: 1200},
@@ -161,7 +170,7 @@ var users = [
 var adults = users.filter(user => user.age >= 18);
 var poors = users.filter(user => user.money < 1000);
 
-```
+----
 
 Ici on vient de s'appuyer sur la méthode +filter()+ en la combinant avec d'autres fonctions qui sont indépendantes entre elles.
 
@@ -173,7 +182,8 @@ En y regardant de plus près, on s'aperçoit que les méthodes itératives s'app
 
 Ce qui nous permet de *combiner les fonctions en les chaînant*.
 
-```js
+[source,js]
+----
 
 var users = [
   {firstname: 'John', age: 33, money: 1200},
@@ -185,7 +195,7 @@ var adultsReceiveSalary = users
   .filter(user => user.age >= 18)
   .map(user => { user.money += 1000; return user; });
 
-```
+----
 
 WARNING: L'ordre d'appel des fonctions a son importance sur le résultat.
 

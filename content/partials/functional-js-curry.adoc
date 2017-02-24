@@ -20,7 +20,8 @@ Cette technique permet de convertir une fonction ayant de multiples paramètres 
 
 Si la curryfication est native dans certains langages de programmation (comme Haskell), ce n'est pas le cas en JavaScript où il faut implémenter ce comportement.
 
-```js
+[source,js]
+----
 
 var hello = function(firstname, lastname) {
   return `Hello ${firstname} ${lastname}`
@@ -43,7 +44,7 @@ helloFirstName('Doe'); // 'Hello John Doe'
 
 helloCurried('Jane')('Fonda'); // 'Hello Jane Fonda'
 
-```
+----
 
 <<<
 
@@ -51,13 +52,14 @@ helloCurried('Jane')('Fonda'); // 'Hello Jane Fonda'
 
 Les librairies https://lodash.com/[Lodash] et http://ramdajs.com/[Ramda] proposent des fonctions facilitant la mise en place de la curryfication.
 
-```js
+[source,js]
+----
 
 var hello = function(firstname, lastname) {
   return `Hello ${firstname} ${lastname}`
 };
 
 // Lodash
-var helloCuriedWithLodash = \_.curry(hello);
+var helloCuriedWithLodash = _.curry(hello);
 
-```
+----

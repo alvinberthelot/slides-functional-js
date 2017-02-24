@@ -10,11 +10,10 @@ Alvin Berthelot <alvin.berthelot@webyousoon.com>
 Version 1.0
 
 <<<
-
 include::license.adoc[]
+
 <<<
 include::content/partials/functional-js-novice-level-1.adoc[]
-
 <<<
 include::content/partials/functional-js-novice-level-2.adoc[]
 <<<

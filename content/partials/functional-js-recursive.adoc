@@ -1,0 +1,29 @@
+== La récursivité
+
+<<<
+
+=== Définition
+
+Un algorithme récursif est un algorithme qui résout un problème en calculant des solutions d'instances plus petites du même problème (cf. https://fr.wikipedia.org/wiki/Algorithme_r%C3%A9cursif[définition Wikipedia]).
+
+```js
+
+function factorial(num)
+{
+  // If the number is less than 0, reject it.
+  if (num < 0) {
+    return -1;
+  }
+  // If the number is 0, its factorial is 1.
+  else if (num == 0) {
+     return 1;
+  }
+  // Otherwise, call this recursive procedure again.
+  else {
+    return (num * factorial(num - 1));
+  }
+}
+
+console.log(factorial(8)); // 40320
+
+```

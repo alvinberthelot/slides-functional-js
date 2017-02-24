@@ -1,0 +1,36 @@
+= Programmation fonctionnelle en JavaScript
+Alvin Berthelot <alvin.berthelot@webyousoon.com>
+:source-highlighter: coderay
+:title-logo-image: image:content/img/js.png[width=100%, scaledwidth=25%, align=left]
+:icons: font
+:doctype: book
+:compat-mode:
+:experimental:
+:pygments-style: bw
+Version 1.0
+
+<<<
+
+include::license.adoc[]
+<<<
+include::content/partials/functional-js-novice-level-1.adoc[]
+
+<<<
+include::content/partials/functional-js-novice-level-2.adoc[]
+<<<
+include::content/partials/handson/js-functional-level-1.adoc[]
+
+<<<
+include::content/partials/functional-js-lodash.adoc[]
+<<<
+include::content/partials/handson/js-lodash-level-1.adoc[]
+
+<<<
+include::content/partials/functional-js-recursive.adoc[]
+<<<
+include::content/partials/handson/js-recursive.adoc[]
+
+<<<
+include::content/partials/functional-js-curry.adoc[]
+<<<
+include::content/partials/handson/js-curry.adoc[]

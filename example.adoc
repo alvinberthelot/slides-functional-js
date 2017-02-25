@@ -1,13 +1,9 @@
-// VARIABLES
-// version
-:version: 1.0
-// about repository
-:nameRepository: boilerplate-slides-asciidoctor
-:urlRepository: https://github.com/alvinberthelot/boilerplate-slides-asciidoctor
+// VARIABLES FREQUENTLY CHANGED
+:revnumber: 1.0.0
 
-
-= Hello World !
-Alvin Berthelot <alvin.berthelot@webyousoon.com>
+// ASCIIDOCTOR VARIABLES
+:author: Alvin Berthelot
+:email: alvin.berthelot@webyousoon.com
 :source-highlighter: coderay
 :title-logo-image: image:content/img/webyousoon_200.png[width=100%, scaledwidth=25%, align=left]
 :icons: font
@@ -15,9 +11,14 @@ Alvin Berthelot <alvin.berthelot@webyousoon.com>
 :compat-mode:
 :experimental:
 :pygments-style: bw
-Version {version}
+
+// CUSTOM VARIABLES
+:nameRepository: boilerplate-slides-asciidoctor
+:urlRepository: https://github.com/alvinberthelot/boilerplate-slides-asciidoctor
 
 
+= Hello World !
+{author}
 
 <<<
 include::intro-license.adoc[]

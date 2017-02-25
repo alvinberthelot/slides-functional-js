@@ -8,7 +8,7 @@ https://creativecommons.org/licenses/by-sa/3.0/deed.fr[CC BY-SA 3.0]
 
 Copyright (C) 2017 http://alvin.berthelot.rocks/[Alvin Berthelot].
 
-Pour toutes questions, réclamations ou remarques, merci d'envoyer un message via Twitter au compte suivant : https://twitter.com/alvinberthelot[@alvinberthelot].
+Pour toutes questions, réclamations ou remarques, merci d'envoyer un message à {email}.
 
 <<<
 

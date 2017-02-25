@@ -1,3 +1,11 @@
+// VARIABLES
+// version
+:version: 1.0
+// about repository
+:nameRepository: boilerplate-slides-asciidoctor
+:urlRepository: https://github.com/alvinberthelot/boilerplate-slides-asciidoctor
+
+
 = Hello World !
 Alvin Berthelot <alvin.berthelot@webyousoon.com>
 :source-highlighter: coderay
@@ -7,7 +15,12 @@ Alvin Berthelot <alvin.berthelot@webyousoon.com>
 :compat-mode:
 :experimental:
 :pygments-style: bw
-Version 1.0
+Version {version}
+
+
+
+<<<
+include::intro-license.adoc[]
 
 <<<
 include::license.adoc[]

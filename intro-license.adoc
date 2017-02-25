@@ -1,0 +1,9 @@
+image::content/img/emojis/warning-sign.png[scaledwidth=10%, align=center]
+
+*Ce(tte) œuvre est mise à disposition selon les termes de la Licence Creative Commons.*
+
+*Attribution - Partage dans les Mêmes Conditions 3.0 non transposé.*
+
+image::content/img/emojis/open-lock.png[scaledwidth=10%, align=center]
+
+La licence, ses explications ainsi que les moyens de contribution et réappropriation sont détaillés à la fin.

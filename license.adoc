@@ -2,13 +2,13 @@
 
 image::content/img/license-by-sa.png[width=100%, scaledwidth=25%, align=center, link="https://creativecommons.org/licenses/by-sa/3.0/deed.fr"]
 
-CC BY-SA 3.0
+https://creativecommons.org/licenses/by-sa/3.0/deed.fr[CC BY-SA 3.0]
 
 *Ce(tte) œuvre est mise à disposition selon les termes de la Licence Creative Commons. Attribution - Partage dans les Mêmes Conditions 3.0 non transposé.*
 
-Copyright (C) 2017 http://alvin.berthelot.rocks/[Alvin Berthelot]
+Copyright (C) 2017 http://alvin.berthelot.rocks/[Alvin Berthelot].
 
-Pour toutes questions, réclamations ou remarques, Twitter : https://twitter.com/alvinberthelot[@alvinberthelot]
+Pour toutes questions, réclamations ou remarques, merci d'envoyer un message via Twitter au compte suivant : https://twitter.com/alvinberthelot[@alvinberthelot].
 
 <<<
 
@@ -21,4 +21,46 @@ Cette licence est souvent comparée aux licences de logiciels libres, “open so
 Toutes les nouvelles œuvres basées sur les vôtres auront la même licence, et toute œuvre dérivée pourra être utilisée même à des fins commerciales.
 
 C’est la licence utilisée par Wikipédia ; elle est recommandée pour des œuvres qui pourraient bénéficier de l’incorporation de contenu depuis Wikipédia et d’autres projets sous licence similaire.
+
+
+=== Contribution et réappropriation
+
+Ce fichier PDF est généré avec http://asciidoctor.org/[Asciidoctor] à partir d'un dépôt Git se trouvant sous GitHub.
+
+{urlRepository}
+
+Cela signifie que vous n'avez pas besoin de vous battre avec un fichier binaire (le PDF) pour *contribuer*, *vous réapproprier le contenu* ou *modifier le thème* de présentation.
+
+image::content/img/emojis/unicorn-face.png[scaledwidth=10%, align=center]
+
+<<<
+
+=== Contribution
+
+Vous voulez *contribuer au contenu* car :
+
+- Il y a une erreur (ça arrive à tout le monde), de typographie, de compréhension, ou tout autre chose.
+
+- Vous souhaitez apporter une précision.
+
+Il vous suffit de https://git-scm.com/book/fr/v1/Git-distribu%C3%A9-Contribution-%C3%A0-un-projet[contribuer au projet via Git] par le moyen d'une "pull request" sur le {urlRepository}[dépôt Git].
+
+image::content/img/emojis/face-throwing-a-kiss.png[scaledwidth=10%, align=center]
+
+<<<
+
+=== Réappropriation
+
+WARNING: N'oubliez pas les conditions de la licence.
+
+Vous voulez vous *réapproprier le contenu* car :
+
+- Vous souhaitez donner un style différent.
+
+- Vous souhaitez enlever/ajouter/modifier des sections dans votre contexte.
+
+Il vous suffit de "forker" le {urlRepository}[dépôt Git] et d'y apporter vos propres modifications, puis de générer par vous même le nouveau PDF.
+
+image::content/img/emojis/hand-with-index-and-middle-fingers-crossed.png[scaledwidth=10%, align=center]
+
 

@@ -1,0 +1,13 @@
+= Hello World !
+Alvin Berthelot <alvin.berthelot@webyousoon.com>
+:source-highlighter: coderay
+:title-logo-image: image:content/img/webyousoon_200.png[width=100%, scaledwidth=25%, align=left]
+:icons: font
+:doctype: book
+:compat-mode:
+:experimental:
+:pygments-style: bw
+Version 1.0
+
+<<<
+include::license.adoc[]

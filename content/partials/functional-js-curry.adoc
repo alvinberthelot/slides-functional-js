@@ -4,7 +4,11 @@
 
 === Définition
 
-En programmation fonctionnelle, la *curryfication* désigne la *transformation d'une fonction à plusieurs arguments en une fonction à un argument qui retourne une fonction sur le reste des arguments* (cf. https://fr.wikipedia.org/wiki/Programmation_fonctionnelle[définition Wikipedia]).
+
+[quote, 'https://fr.wikipedia.org/wiki/Curryfication[définition Wikipedia]']
+____
+En programmation fonctionnelle, la *curryfication* désigne la *transformation d'une fonction à plusieurs arguments en une fonction à un argument qui retourne une fonction sur le reste des arguments*.
+____
 
 Imaginons une fonction f avec 3 arguments : a, b et c.
 

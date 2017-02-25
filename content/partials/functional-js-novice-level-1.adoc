@@ -4,16 +4,34 @@
 
 === Définition de la programmation fonctionnelle
 
+[quote, 'https://fr.wikipedia.org/wiki/Programmation_fonctionnelle[définition Wikipedia]']
+____
 La *programmation fonctionnelle est un paradigme de programmation* de type déclaratif qui considère le calcul en tant qu'évaluation de fonctions mathématiques.
-Comme le changement d'état et la mutation des données ne peuvent pas être représentés par des évaluations de fonctions, la programmation fonctionnelle ne les admet pas, au contraire elle met en avant l'application des fonctions, contrairement au modèle de programmation impérative qui met en avant les changements d'état. (cf. https://fr.wikipedia.org/wiki/Programmation_fonctionnelle[définition Wikipedia])
+Comme le changement d'état et la mutation des données ne peuvent pas être représentés par des évaluations de fonctions, la programmation fonctionnelle ne les admet pas, au contraire elle met en avant l'application des fonctions, contrairement au modèle de programmation impérative qui met en avant les changements d'état.
+____
 
-Pour comprendre comment la programmation fonctionnelle s'applique, il faut comprendre les concepts sous jacents : l'*immuabilité*, les *fonctions pures*, la *transparence référentielle* et les *fonctions d’ordre supérieur*.
+<<<
+
+=== Concepts sous jacents
+
+Pour comprendre comment la programmation fonctionnelle s'applique, il faut comprendre les concepts sous jacents :
+
+- L'*immuabilité*.
+
+- Les *fonctions pures*.
+
+- La *transparence référentielle*.
+
+- Les *fonctions d’ordre supérieur*.
 
 <<<
 
 === Immuabilité
 
-Un objet immuable, en programmation orientée objet et fonctionnelle, est un objet dont l'état ne peut pas être modifié après sa création. (cf. https://fr.wikipedia.org/wiki/Objet_immuable[définition Wikipedia]).
+[quote, 'https://fr.wikipedia.org/wiki/Objet_immuable[définition Wikipedia]']
+____
+Un objet immuable, en programmation orientée objet et fonctionnelle, est un objet dont l'état ne peut pas être modifié après sa création.
+____
 
 Parmi les valeurs de JavaScript, les primitifs sont immuables par défaut : les chaînes de caractères, les nombres, les booléens et +undefined+.
 
@@ -213,7 +231,10 @@ Cela permet de *tester facilement toute fonction pure*.
 
 Lorsqu'on indique qu'une fonction pure ne dépend que des arguments qui lui sont passés, *il s'agit des évaluations de ces arguments et non de leurs références*.
 
-Une expression est référentiellement transparente si elle peut être remplacée par sa valeur sans changer le programme (cf. https://fr.wikipedia.org/wiki/Transparence_r%C3%A9f%C3%A9rentielle[définition Wikipedia]).
+[quote, 'https://fr.wikipedia.org/wiki/Transparence_r%C3%A9f%C3%A9rentielle[définition Wikipedia]']
+____
+Une expression est référentiellement transparente si elle peut être remplacée par sa valeur sans changer le programme.
+____
 
 [source,js]
 ----

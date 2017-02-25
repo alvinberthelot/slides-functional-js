@@ -25,6 +25,7 @@ include::intro-license.adoc[]
 
 <<<
 include::content/partials/functional-js-novice-level-1.adoc[]
+
 <<<
 include::content/partials/functional-js-novice-level-2.adoc[]
 <<<

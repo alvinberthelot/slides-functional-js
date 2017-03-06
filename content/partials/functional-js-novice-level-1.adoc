@@ -39,14 +39,11 @@ Parmi les valeurs de JavaScript, les primitifs sont immuables par défaut : les 
 ----
 
 var tutorial = 'Hello';
-
 tutorial += ' World !';
 
 ----
 
-Ici la référence +tutorial+ a été changé mais pas la valeur de +'Hello'+.
-
-En mémoire il y a donc 2 valeurs +'Hello'+ et +'Hello World!'+.
+Ici la référence +tutorial+ a été changé mais pas la valeur de +'Hello'+. En mémoire il y a donc 2 valeurs +'Hello'+ et +'Hello World!'+.
 
 <<<
 
@@ -242,11 +239,7 @@ ____
 function addTwo(number) {
   return number + 2;
 }
-
-addTwo(2 + 3) === addTwo(5); // Vrai
 addTwo(5) === addTwo(addTwo(3)); // Vrai
-
-5 === addTwo; // Faux
 
 ----
 

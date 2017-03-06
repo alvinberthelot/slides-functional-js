@@ -12,9 +12,7 @@ ____
 
 Imaginons une fonction f avec 3 arguments : a, b et c.
 
-Avec une fonction non currifiée +f(a)+ retourne *l'évaluation* de +f(a, undefined, undefined)+.
-
-Avec une fonction currifiée +f(a)+ retourne une fonction +g(b, c)+.
+Avec une fonction non currifiée +f(a)+ retourne *l'évaluation* de +f(a, undefined, undefined)+. Avec une fonction currifiée +f(a)+ retourne une fonction +g(b, c)+.
 
 Cette technique permet de convertir une fonction ayant de multiples paramètres en une séquence de fonctions ayant chacune un unique paramètre.
 

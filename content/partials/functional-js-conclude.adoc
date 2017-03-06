@@ -1,0 +1,15 @@
+== Bilan
+
+<<<
+
+=== Intérêt de la programmation fonctionnelle
+
+La programmation fonctionelle :
+
+- Le code est *extensible* du fait de sa modularité, il n'est pas nécessaire de reprendre une grande partie du code pour ajouter de nouvelles fonctions.
+
+- Le code est *réutilisable*, il est possible de s'appuyer sur les fonctions existantes sans dupliquer le code.
+
+- Le code est *testable*, les fonctions pures facilitent la mise en place de tests.
+
+- Le code est *compréhensible*, des fonctions bien chaînées permettent une bonne lecture du code.

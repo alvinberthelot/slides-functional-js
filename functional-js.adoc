@@ -47,4 +47,7 @@ include::content/partials/functional-js-curry.adoc[]
 include::content/partials/handson/js-curry.adoc[]
 
 <<<
+include::content/partials/functional-js-conclude.adoc[]
+
+<<<
 include::license.adoc[]

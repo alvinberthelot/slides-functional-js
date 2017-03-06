@@ -1,0 +1,50 @@
+// VARIABLES FREQUENTLY CHANGED
+:revnumber: 1.0.0
+
+// ASCIIDOCTOR VARIABLES
+:author: Alvin Berthelot
+:email: alvin.berthelot@webyousoon.com
+:source-highlighter: coderay
+:title-logo-image: image:content/img/js.png[width=100%, scaledwidth=25%, align=left]
+:icons: font
+:doctype: book
+:compat-mode:
+:experimental:
+:pygments-style: bw
+
+// CUSTOM VARIABLES
+:nameRepository: slides-functional-js
+:urlRepository: https://github.com/alvinberthelot/slides-functional-js
+
+
+= Programmation fonctionnelle en JavaScript
+{author}
+
+<<<
+include::intro-license.adoc[]
+
+<<<
+include::content/partials/functional-js-novice-level-1.adoc[]
+
+<<<
+include::content/partials/functional-js-novice-level-2.adoc[]
+<<<
+include::content/partials/handson/js-functional-level-1.adoc[]
+
+<<<
+include::content/partials/functional-js-lodash.adoc[]
+<<<
+include::content/partials/handson/js-lodash-level-1.adoc[]
+
+<<<
+include::content/partials/functional-js-recursive.adoc[]
+<<<
+include::content/partials/handson/js-recursive.adoc[]
+
+<<<
+include::content/partials/functional-js-curry.adoc[]
+<<<
+include::content/partials/handson/js-curry.adoc[]
+
+<<<
+include::license.adoc[]

@@ -1,0 +1,79 @@
+== Lodash
+
+<<<
+
+=== C'est quoi Lodash ?
+
+https://lodash.com/[Lodash] est une librairie de fonctions permettant de manipuler des données et dispose de nombreuses fonctions "utilitaire".
+
+Il s'agit d'un fork d'http://underscorejs.org/[Underscore], utilisée avec la même notation +_+.
+
+<<<
+
+=== Pourquoi Lodash ?
+
+Précédemment nous avons vu qu'il était possible de faire de la programmation fonctionnelle avec les tableaux.
+
+Cependant on trouve vite les limites des méthodes natives des tableaux, elles sont trop peu nombreuses, Lodash en propose beaucoup plus.
+
+Les méthodes natives des tableaux ne s'appliquent qu'aux tableaux, Lodash lui permet d'appliquer un certain nombre de fonctions sur différents types, notamment des collections (un mix tableaux et objets).
+
+Il existe deux syntaxes pour manipuler des données.
+
+<<<
+
+=== Utiliser Lodash avec un "wrapper"
+
+On convertit les données à manipuler via un "wrapper" Lodash.
+
+[source,js]
+----
+
+var wrappedNames = _(['John', 'Jane', 'Paul']);
+var messageNames = wrappedNames.map(user => `Hello ${user}`));
+
+var wrappedUsers = _({adult: 'John', young: 'Paul'});
+var messageUsers = wrappedUser.map(user => `Hello ${user}`));
+
+----
+
+<<<
+
+=== Utiliser Lodash en passant les données en paramètre
+
+Il est également possible de passer les données à manipuler en paramètres.
+
+[source,js]
+----
+
+_.map(['John', 'Jane', 'Paul'], user => `Hello ${user}`);
+
+_.map({adult: 'John', young: 'Paul'}, user => `Hello ${user}`);
+
+----
+
+NOTE: C'est plutôt cette syntaxe qui est utilisée, c'est d'ailleurs celle de la https://lodash.com/docs/4.17.4[documentation officielle].
+
+<<<
+
+=== Le chaînage de fonctions
+
+Cependant avec la syntaxe de manipulation en passant les données en paramètre, il n'est pas si facile de chaîner les fonctions.
+
+Il est nécessaire de passer par un objet "wrapper" en le constituant avec la fonction +chain+ et en le déconstituant avec la fonction +value+.
+
+[source,js]
+----
+
+var adultsReceiveSalary = _.chain([
+  {firstname: 'John', age: 33, money: 1200},
+  {firstname: 'Jane', age: 31, money: 800},
+  {firstname: 'Paul', age: 16, money: 400}
+])
+.filter(user => user.age >= 18)
+.map(user => { user.money += 1000; return user; })
+.value();
+
+----
+
+<<<

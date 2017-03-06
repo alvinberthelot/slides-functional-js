@@ -1,0 +1,21 @@
+image::content/img/programming_meme.png[width=100%, scaledwidth=25%, align=center]
+
+=== Exercices
+
+Votre logiciel doit retourner les caractéristiques d'un panier de produits.
+
+Vous êtes commerçant, tous les 3 articles identiques, le troisième est offert.
+
+[source,js]
+----
+
+let prices = { banana: 1, potato: 2, tomato: 3, cucumber: 4, salad: 5, apple: 6 };
+
+let products = [ 'tomato', 'cucumber', 'tomato', 'salad', 'potato', 'cucumber', 'potato', 'potato', 'tomato', 'potato' ];
+
+myWonderfulFunction(prices, products);
+
+// should return
+{ price: 25, countArticles: 10, countProducts: 4 }
+
+----

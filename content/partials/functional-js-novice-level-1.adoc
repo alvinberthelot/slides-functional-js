@@ -1,0 +1,246 @@
+== C'est quoi la programmation fonctionnelle ?
+
+<<<
+
+=== Définition de la programmation fonctionnelle
+
+[quote, 'https://fr.wikipedia.org/wiki/Programmation_fonctionnelle[définition Wikipedia]']
+____
+La *programmation fonctionnelle est un paradigme de programmation* de type déclaratif qui considère le calcul en tant qu'évaluation de fonctions mathématiques.
+Comme le changement d'état et la mutation des données ne peuvent pas être représentés par des évaluations de fonctions, la programmation fonctionnelle ne les admet pas, au contraire elle met en avant l'application des fonctions, contrairement au modèle de programmation impérative qui met en avant les changements d'état.
+____
+
+<<<
+
+=== Concepts sous jacents
+
+Pour comprendre comment la programmation fonctionnelle s'applique, il faut comprendre les concepts sous jacents :
+
+- L'*immuabilité*.
+
+- Les *fonctions pures*.
+
+- La *transparence référentielle*.
+
+- Les *fonctions d’ordre supérieur*.
+
+<<<
+
+=== Immuabilité
+
+[quote, 'https://fr.wikipedia.org/wiki/Objet_immuable[définition Wikipedia]']
+____
+Un objet immuable, en programmation orientée objet et fonctionnelle, est un objet dont l'état ne peut pas être modifié après sa création.
+____
+
+Parmi les valeurs de JavaScript, les primitifs sont immuables par défaut : les chaînes de caractères, les nombres, les booléens et +undefined+.
+
+[source,js]
+----
+
+var tutorial = 'Hello';
+tutorial += ' World !';
+
+----
+
+Ici la référence +tutorial+ a été changé mais pas la valeur de +'Hello'+. En mémoire il y a donc 2 valeurs +'Hello'+ et +'Hello World!'+.
+
+<<<
+
+=== La mutation des objets
+
+À l'inverse les objets peuvent muter.
+
+[source,js]
+----
+
+var messageHello = {label: 'Hello', name: 'World !'};
+var messageGoodbye = messageHello;
+messageGoodbye.label = 'Goodbye';
+
+messageHello === messageGoodbye; // Vrai
+messageHello.label; // 'Goodbye'
+
+----
+
+Ici la référence de +messageGoodbye+ n'a pas été changé mais sa valeur oui.
+
+Les tableaux étant des objets c'est aussi vrai pour eux.
+
+[source,js]
+----
+
+var animals = ['Grumpy', 'Droopy'];
+var pets = animals;
+animals.push('Nemo');
+
+animals === pets; // Vrai
+pets.length; // 3
+
+----
+
+<<<
+
+=== Immuabilité Vs Constante
+
+On confond souvent immuabilité et constante, *l'immuabilité empêche la modification de la valeur* alors que *la constante empêche la modification de la référence*.
+
+[source,js]
+----
+
+const tutorial = 'Hello';
+tutorial += ' World !'; // Erreur
+
+const message = {label: 'Hello', name: 'World !'};
+messageGoodbye.label = 'Goodbye'; // Pas d'erreur
+
+----
+
+<<<
+
+=== Quizz Immuabilité Vs Constante
+
+[source,js]
+----
+
+var user1 = {firstname: 'John', age: 33, money: 1200};
+const user2 = {firstname: 'Jane', age: 31, money: 800};
+var user3 = {firstname: 'Paul', age: 16, money: 400};
+var message = 'Hello';
+
+function sayMessageToUser(message, user) {
+  if(user.age < 18) {
+    message += ', but sorry you are too young';
+    console.log(message + ' ' + user.firstname);
+  } else {
+    user.money -= 200;
+    console.log(message + ' ' + user.firstname);
+  }
+}
+
+sayMessageToUser(message, user1); // ???
+console.log(message); // ???
+console.log(user1.money); // ???
+
+sayMessageToUser(message, user2); // ???
+console.log(message); // ???
+console.log(user2.money); // ???
+
+sayMessageToUser(message, user3); // ???
+console.log(message); // ???
+console.log(user3.money); // ???
+
+----
+
+<<<
+
+=== La mutation est-ce grave docteur ?
+
+*Un objet peut très facilement être muté même étant déclaré comme constante.*
+
+Si un objet est passé en paramètre d'une fonction, on peut se poser là question de comment la fonction va manipuler cet objet et éventuellement le faire évoluer.
+
+Si un objet qui est passé en paramètre d'une fonction est modifié (au sein de cette fonction), on parlera alors d'une *fonction ayant des "effets de bord"* ou de *fonction impure*.
+
+[source,js]
+----
+
+function sayMessageToUser(message, user) {
+  if(user.age < 18) {
+    message += ', but sorry you are too young';
+    console.log(message + ' ' + user.firstname);
+  } else {
+    user.money -= 200;
+    console.log(message + ' ' + user.firstname);
+  }
+}
+
+----
+
+<<<
+
+=== Les fonctions pures
+
+On appelle *une fonction pure, une fonction dont le résultat ne dépend que des arguments qui lui sont passés* et jamais du contexte dans laquelle elle est invoquée *et qui n'a pas d'effets de bord*, c'est à dire qui ne change pas le contexte dans laquelle elle est invoquée.
+
+[source,js]
+----
+
+var coeff = 1;
+
+// Pure
+function sum(a, b, c) { 
+  return a + b + c; 
+}
+
+// Impure
+function multiply(a, b, c) { 
+  return a * b * c * coeff; 
+}
+
+// Impure
+function increaseCoeff() { 
+  coeff++;
+}
+
+----
+
+<<<
+
+=== L'intérêt des fonctions pures
+
+Utiliser un maximum de fonctions pures apportent de nombreux avantages :
+
+- La lisibilité et la compréhension du code.
+
+- La simplification des tests.
+
+- La transparence référentielle.
+
+<<<
+
+=== La simplification des tests
+
+Comme le résultat d'une fonction pure ne dépend que des arguments qui lui sont passés, celà implique qu'*une invocation avec des arguments identiques retournera toujours le même résultat*.
+
+[source,js]
+----
+
+var coeff = 1;
+
+// Pure
+function getMax(number1, number2) {
+  return Math.max(number1, number2);
+}
+
+// Impure
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+----
+
+Cela permet de *tester facilement toute fonction pure*.
+
+<<<
+
+=== La transparence référentielle
+
+Lorsqu'on indique qu'une fonction pure ne dépend que des arguments qui lui sont passés, *il s'agit des évaluations de ces arguments et non de leurs références*.
+
+[quote, 'https://fr.wikipedia.org/wiki/Transparence_r%C3%A9f%C3%A9rentielle[définition Wikipedia]']
+____
+Une expression est référentiellement transparente si elle peut être remplacée par sa valeur sans changer le programme.
+____
+
+[source,js]
+----
+
+function addTwo(number) {
+  return number + 2;
+}
+addTwo(5) === addTwo(addTwo(3)); // Vrai
+
+----
+
+Cela permet de *combiner des fonctions à l'intérieur d'autres fonctions*.

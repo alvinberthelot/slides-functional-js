@@ -1,0 +1,67 @@
+== La curryfication
+
+<<<
+
+=== Définition
+
+
+[quote, 'https://fr.wikipedia.org/wiki/Curryfication[définition Wikipedia]']
+____
+En programmation fonctionnelle, la *curryfication* désigne la *transformation d'une fonction à plusieurs arguments en une fonction à un argument qui retourne une fonction sur le reste des arguments*.
+____
+
+Imaginons une fonction f avec 3 arguments : a, b et c.
+
+Avec une fonction non currifiée +f(a)+ retourne *l'évaluation* de +f(a, undefined, undefined)+. Avec une fonction currifiée +f(a)+ retourne une fonction +g(b, c)+.
+
+Cette technique permet de convertir une fonction ayant de multiples paramètres en une séquence de fonctions ayant chacune un unique paramètre.
+
+<<<
+
+=== Implémentation en JavaScript
+
+Si la curryfication est native dans certains langages de programmation (comme Haskell), ce n'est pas le cas en JavaScript où il faut implémenter ce comportement.
+
+[source,js]
+----
+
+var hello = function(firstname, lastname) {
+  return `Hello ${firstname} ${lastname}`
+};
+
+hello('John'); // 'Hello John undefined'
+
+function curry2(fn) {
+  return function(firstArg) {
+    return function(secondArg) {
+      return fn(firstArg, secondArg);
+    };
+  };
+}
+
+var helloCurried = curry2(hello);
+
+var helloFirstName = helloCurried('John');
+helloFirstName('Doe'); // 'Hello John Doe'
+
+helloCurried('Jane')('Fonda'); // 'Hello Jane Fonda'
+
+----
+
+<<<
+
+=== Curryfication avec librairies
+
+Les librairies https://lodash.com/[Lodash] et http://ramdajs.com/[Ramda] proposent des fonctions facilitant la mise en place de la curryfication.
+
+[source,js]
+----
+
+var hello = function(firstname, lastname) {
+  return `Hello ${firstname} ${lastname}`
+};
+
+// Lodash
+var helloCuriedWithLodash = _.curry(hello);
+
+----

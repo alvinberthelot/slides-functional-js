@@ -207,7 +207,7 @@ En JavaScript plusieurs librairies proposent déjà un certain nombre de fonctio
 
 - http://underscorejs.org/[Underscore], une librairie proposant un certain nombre de fonctions utiles dans l'approche de la programmation fonctionnelle.
 
-- https://lodash.com/[Lodash], un fork d'Undercore qui a su dépasser son maître en terme de performance.
+- https://lodash.com/[Lodash], un fork d'Underscore qui a su dépasser son maître en terme de performance.
 
 - http://ramdajs.com/[Ramda], librairie conçue spécialement pour la programmation fonctionnelle en facilitant le chaînage des fonctions et l'immuabilité des données.
 

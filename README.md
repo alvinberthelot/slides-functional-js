@@ -2,7 +2,7 @@
 
 Contenus textuels (et support diapositives PDF) pour apprendre la programmation fonctionnelle en JavaScript.
 
-[![Fichier PDF](https://github.com/alvinberthelot/slides-functional-js/blob/master/slides.png)](https://github.com/alvinberthelot/slides-functional-js/blob/master/functional-js.pdf)
+[![Fichier PDF](https://github.com/alvinberthelot/slides-functional-js/blob/master/slides-functional-js.png)](https://github.com/alvinberthelot/slides-functional-js/blob/master/functional-js.pdf)
 
 [Lien du fichier](https://github.com/alvinberthelot/slides-functional-js/blob/master/functional-js.pdf)
 
